@@ -1,0 +1,226 @@
+/* -------------------------------------- */
+/* 1. Variables y Estilos Generales       */
+/* -------------------------------------- */
+
+:root {
+    /* Paleta de Colores Románticos */
+    --color-principal: #FF69B4; /* Rosa Fuerte/Fucsia (Hot Pink) - Ideal para botones o títulos */
+    --color-secundario: #8A2BE2; /* Azul Violeta (Blue Violet) - Para acentos o fondo del nav */
+    --color-fondo: #FFF0F5; /* Blanco Rosado/Lavanda muy claro (Lavender Blush) - Fondo suave */
+    --color-texto-oscuro: #333333; /* Gris Oscuro - Para texto principal */
+    --color-texto-claro: #FFFFFF; /* Blanco - Para texto sobre fondos oscuros */
+}
+
+/* Aplicar una fuente legible y el color de fondo principal */
+body {
+    font-family: 'Georgia', serif; /* Una fuente clásica y elegante */
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-fondo);
+    color: var(--color-texto-oscuro);
+    line-height: 1.6; /* Espaciado entre líneas para mejor lectura */
+}
+
+/* Estilo para todos los títulos */
+h1, h2, h3 {
+    color: var(--color-principal);
+    text-align: center;
+    font-family: 'Arial Black', sans-serif; /* Fuente más fuerte para títulos */
+}
+
+hr {
+    border: none;
+    border-top: 2px solid var(--color-principal);
+    width: 50%;
+    margin: 40px auto;
+}
+
+
+/* -------------------------------------- */
+/* 2. Encabezado y Navegación             */
+/* -------------------------------------- */
+
+header {
+    background-color: var(--color-principal);
+    color: var(--color-texto-claro);
+    padding: 60px 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+    color: var(--color-texto-claro);
+    font-size: 2.5em;
+    margin-bottom: 5px;
+}
+
+header p {
+    font-style: italic;
+    opacity: 0.9;
+}
+
+/* Estilos para el menú de navegación */
+nav {
+    background-color: var(--color-secundario);
+    padding: 10px 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav li {
+    margin: 0 15px;
+}
+
+nav a {
+    color: var(--color-texto-claro);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+    padding: 5px 10px;
+    transition: background-color 0.3s ease;
+    border-radius: 5px;
+}
+
+nav a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+
+/* -------------------------------------- */
+/* 3. Contenido Principal (main y sections) */
+/* -------------------------------------- */
+
+main {
+    padding: 20px;
+    max-width: 1000px; /* Limita el ancho del contenido para mejor lectura */
+    margin: 0 auto;
+}
+
+section {
+    padding: 40px 20px;
+    margin-bottom: 20px;
+    background-color: var(--color-texto-claro); /* Fondo blanco para el contenido */
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+/* -------------------------------------- */
+/* 4. Estilos Específicos de Secciones    */
+/* -------------------------------------- */
+
+/* A. Galería de Fotos */
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* 3 o más columnas en pantallas grandes */
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.galeria img {
+    width: 100%;
+    height: 200px; /* Altura fija para uniformidad */
+    object-fit: cover; /* Asegura que la imagen cubra el espacio sin distorsionarse */
+    border-radius: 8px;
+    border: 3px solid var(--color-principal);
+    transition: transform 0.3s ease;
+}
+
+.galeria img:hover {
+    transform: scale(1.05); /* Efecto zoom al pasar el ratón */
+    border-color: var(--color-secundario);
+}
+
+/* B. Cartas */
+.carta {
+    background-color: var(--color-fondo); /* Color de fondo más suave para las cartas */
+    border: 1px solid #e0e0e0;
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border-left: 5px solid var(--color-principal); /* Borde decorativo */
+}
+
+.carta h3 {
+    text-align: left;
+    color: var(--color-secundario);
+    margin-top: 0;
+    border-bottom: 1px dashed #ccc;
+    padding-bottom: 5px;
+}
+
+.carta footer {
+    text-align: right;
+    font-style: italic;
+    margin-top: 10px;
+    color: #666;
+}
+
+/* C. Música */
+.cancion, .playlist-externa {
+    margin-top: 20px;
+    text-align: center;
+}
+
+audio {
+    width: 80%;
+    max-width: 400px;
+    margin: 10px auto;
+    display: block;
+}
+
+iframe {
+    /* Estilo para reproductores de Spotify/YouTube */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+/* -------------------------------------- */
+/* 5. Pie de Página                       */
+/* -------------------------------------- */
+
+footer {
+    background-color: var(--color-secundario);
+    color: var(--color-texto-claro);
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 40px;
+}
+
+footer p {
+    margin: 5px 0;
+    font-size: 0.9em;
+}
+
+/* -------------------------------------- */
+/* 6. Adaptación Móvil (Responsive Design)*/
+/* -------------------------------------- */
+
+@media (max-width: 768px) {
+    /* Ajustar el padding del header en dispositivos pequeños */
+    header {
+        padding: 40px 15px;
+    }
+    
+    /* Asegurar que los elementos del nav se apilen verticalmente */
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav li {
+        margin: 5px 0;
+    }
+
+    /* Reducir el espacio de las secciones */
+    section {
+        padding: 20px 10px;
+    }
+}
